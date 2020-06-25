@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "EventEnriched",
+  "namespace": "com.github.sittli.geodata",
+  "fields": [
+    {
+      "name": "address",
+      "type": "string"
+    },
+    {
+      "name": "eventtype",
+      "type": "string"
+    },
+    {
+      "name": "lat",
+      "type": [
+        "null",
+        "double"
+      ],
+      "default": null
+    },
+    {
+      "name": "lng",
+      "type": [
+        "null",
+        "double"
+      ],
+      "default": null
+    }
+  ]
+}

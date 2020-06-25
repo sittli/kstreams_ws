@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "EventRequest",
+  "namespace": "com.github.sittli.geodata",
+  "fields": [
+    {
+      "name": "address",
+      "type": "string"
+    }
+  ]
+}

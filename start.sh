@@ -25,7 +25,7 @@ check_jq || exit 1
 XX_CCLOUD_PASSWORD=
 XX_CLOUD_EMAIL=
 DEMO_TOPIC_PREFIX=geo
-DEMO_SCHEMA_DIR=/Users/andreas/cnfl/proj/idea/sittli/geoevent/src/main/resources/avro/com.github.sittli.geoevent
+DEMO_SCHEMA_DIR=./geoevent/src/main/resources/avro/com.github.sittli.geoevent
 DEMO_SCRIPT_DIR=./scripts
 DEMO_ENVIRONMENT_NAME="sitta-demo"
 DEMO_CLUSTER_NAME="sitta-kafka-cluster"
@@ -177,6 +177,9 @@ cat <<EOF > $CLIENT_CONFIG
 ssl.endpoint.identification.algorithm=https
 sasl.mechanism=PLAIN
 security.protocol=SASL_SSL
+request.timeout.ms=20000
+retry.backoff.ms=500
+auto.register.schemas=false
 bootstrap.servers=${BOOTSTRAP_SERVERS}
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username\="${API_KEY_SA}" password\="${API_SECRET_SA}";
 EOF

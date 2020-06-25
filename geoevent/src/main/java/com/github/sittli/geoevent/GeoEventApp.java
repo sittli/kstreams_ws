@@ -62,7 +62,7 @@ public class GeoEventApp {
     }
     public void run() {
         try {
-            extProps = loadExternalConfig("<PATH_TO_GENERATED_CLIENT_CONFIG>/client.config");
+            extProps = loadExternalConfig("./scripts/client.config");
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();

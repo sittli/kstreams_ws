@@ -102,7 +102,7 @@ ccloud kafka cluster use $CLUSTER
 
 echo -e "\n# Cleanup: delete topics, kafka cluster, environment"
 # connect topics: connect-configs connect-offsets connect-status
-for t in geo_eventdata geo_eventdata_lookup geo_eventdata_response geo_eventdata_store geo_eventdata_pending_store; do
+for t in geo_eventdata geo_eventdata_enriched geo_eventdata_lookup geo_eventdata_response geo_eventdata_store geo_eventdata_pending_store; do
   if ccloud kafka topic describe $t &>/dev/null; then
     echo "ccloud kafka topic delete $t"
     ccloud kafka topic delete $t

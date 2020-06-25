@@ -44,7 +44,7 @@ public class GeoStreamApp {
 
     public static void main(String[] args) {
         try {
-            extProps = loadExternalConfig("<PATH_TO_GENERATED_CLIENT_CONFIG>/client.config");
+            extProps = loadExternalConfig("./scripts/client.config");
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
@@ -213,7 +213,7 @@ public class GeoStreamApp {
 // Technically the output stream does not have to have the identical schema of the store
         resolvedPendingStream.to(GEO_EVENTDATA_ENRICHED_TOPIC);
 
-s
+
         System.err.println( sb.build().describe() );
         KafkaStreams ks = new KafkaStreams( sb.build(), props );
         // start the streaming app

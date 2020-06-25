@@ -325,13 +325,14 @@ function init_kafkacat_consume_script() {
 EOF
 }
 
+# mask the $ sign for value.schema to avoid immediate interpretation
 function init_produce_script() {
   cat<< EOF > $DEMO_OUT_FILE
   #!/bin/bash
 kafka-avro-console-producer --topic ${DEMO_TOPIC} --broker-list ${BOOTSTRAP_SERVERS} --producer.config ${CLIENT_CONFIG} \
  --producer-property auto.register.schemas="false" --property schema.registry.url="${SR_URL}" --property basic.auth.credentials.source=USER_INFO \
  --property basic.auth.user.info="${SR_API_KEY}:${SR_API_SECRET}" \
- --property value.schema="$(< $DEMO_SCHEMA_DIR/geodata_event.avsc)"
+ --property value.schema="\$(< $DEMO_SCHEMA_DIR/geodata_event.avsc)"
 EOF
 }
 

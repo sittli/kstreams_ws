@@ -172,6 +172,7 @@ echo "$OUTPUT"
 API_KEY_SA=$(echo "$OUTPUT" | grep '| API Key' | awk '{print $5;}')
 API_SECRET_SA=$(echo "$OUTPUT" | grep '| Secret' | awk '{print $4;}')
 
+mkdir -p ${DEMO_SCRIPT_DIR}
 echo -e "\n# Create a local configuration file $CLIENT_CONFIG with Confluent Cloud connection information with the newly created API key and secret"
 cat <<EOF > $CLIENT_CONFIG
 ssl.endpoint.identification.algorithm=https
@@ -327,10 +328,10 @@ EOF
 function init_produce_script() {
   cat<< EOF > $DEMO_OUT_FILE
   #!/bin/bash
-kafka-avro-console-producer --topic ${DEMO_TOPIC} --broker-list ${BOOTSTRAP_SERVERS} --producer.config ~/cnfl/proj/idea/sittli/geoevent/src/main/resources/producer-config.properties \
+kafka-avro-console-producer --topic ${DEMO_TOPIC} --broker-list ${BOOTSTRAP_SERVERS} --producer.config ${CLIENT_CONFIG} \
  --producer-property auto.register.schemas="false" --property schema.registry.url="${SR_URL}" --property basic.auth.credentials.source=USER_INFO \
  --property basic.auth.user.info="${SR_API_KEY}:${SR_API_SECRET}" \
- --property value.schema="$(< ~/cnfl/proj/idea/sittli/geoevent/src/main/resources/avro/com.github.sittli.geoevent/geodata_event.avsc)"
+ --property value.schema="$(< $DEMO_SCHEMA_DIR/geodata_event.avsc)"
 EOF
 }
 

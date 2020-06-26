@@ -8,7 +8,7 @@ The progressive cache should be implemented with streaming best practices in min
 ## Sequence Diagram
 TBD: embed sequence diagram
 ## What does the demo do?
-* A script will generate a Confluent Cloud environment / cluster / topics / ACL / service accounts plus various shell scripts
+* A script will generate a Confluent Cloud environment / cluster / topics / ACL / service accounts / schema registry / schemas plus various shell scripts
 * A Java streaming service (S) enriches events either directly or indirectly
 * A Java microservice (MS) with inbound/outbound topics (async interface) invokes an external service
 * The shell scripts allow to publish or consume data from different topics (initial, final, intermediary)

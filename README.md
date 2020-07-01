@@ -30,6 +30,11 @@ DEMO_ENVIRONMENT_NAME="sitta-demo"
 DEMO_CLUSTER_NAME="sitta-kafka-cluster"
 ```
 These are the names for the environment and the cluster that will get created.
+Make sure that the following env vars are not set 
+```
+XX_CCLOUD_EMAIL
+XX_CCLOUD_PASSWORD
+```
 ### Execute 
 ```
 ./start.sh <CC_URL> <CC_USER_KEY> <CC_USER_SECRET>

@@ -36,7 +36,7 @@ These are the names for the environment and the cluster that will get created.
 ```
 e.g.
 ```
-./start.sh https://confluent.cloud andreas@confluent.io 349wojwe2v"L:r*f;jrk
+./start.sh https://confluent.cloud andreas@confluent.io 9bLC90q6c1Yl!TYNXUk*
 ```
 Alternatively you can start without arguments and respond to the prompt for the various pieces of information.\
 Note, that you can ignore a line that reads like
@@ -70,7 +70,7 @@ Check the existence of topics.
 ## Build Java Client Apps
 * Edit the file ```GeoEventApp.java``` and provide your GoogleMaps API key. E.g.
 ```
-static String GOOGLE_MAPS_API_KEY = "asdfkl;3i3qiWKLE05_we;lkA(*WE";
+static String GOOGLE_MAPS_API_KEY = "9bLC90q6c1Yl!TYNXUk*";
 ```
 * Build the jar like
 ```
